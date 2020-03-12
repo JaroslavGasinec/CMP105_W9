@@ -3,7 +3,7 @@
 BallManager::BallManager()
 {
 	srand(time(NULL));
-	ball_T.loadFromFile("gfx/Goomba.png");
+	ball_T.loadFromFile("gfx/Beach_Ball.png");
 	for (int i = 0; i < 20; i++) {
 		Ball newBall;
 		initialise(&newBall);

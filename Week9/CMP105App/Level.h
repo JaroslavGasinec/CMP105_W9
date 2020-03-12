@@ -6,6 +6,7 @@
 #include <iostream>
 #include <time.h>
 #include "BallManager.h"
+#include "RainManager.h"
 
 
 class Level{
@@ -27,4 +28,5 @@ private:
 	Input* input;
 	sf::Vector2u windowSize;
 	BallManager* ballManager;
+	RainManager* rainManager;
 };

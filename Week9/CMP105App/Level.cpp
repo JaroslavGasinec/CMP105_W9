@@ -6,6 +6,7 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 	input = in;
 	windowSize = window->getSize();
 	ballManager = new BallManager(&windowSize);
+	rainManager = new RainManager(&windowSize);
 	// initialise game objects
 
 }
@@ -24,6 +25,9 @@ void Level::handleInput(float dt)
 	if (input->isKeyDown(sf::Keyboard::S)) {
 		ballManager->spawn(1);
 	}
+	if (input->isKeyDown(sf::Keyboard::D)) {
+		rainManager->spawn();
+	}
 }
 
 // Update game objects
@@ -31,6 +35,7 @@ void Level::update(float dt)
 {
 	windowSize = window->getSize();
 	ballManager->update(dt);
+	rainManager->update(dt);
 }
 
 // Render level
@@ -38,6 +43,7 @@ void Level::render()
 {
 	beginDraw();
 	ballManager->render(window);
+	rainManager->render(window);
 	endDraw();
 }
 

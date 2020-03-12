@@ -26,5 +26,5 @@ private:
 	sf::RenderWindow* window;
 	Input* input;
 	sf::Vector2u windowSize;
-	BallManager ballManager; //= BallManager(&windowSize);
+	BallManager* ballManager;
 };

@@ -75,7 +75,7 @@ void BallManager::update(float dt)
 			balls[i].update(dt);
 		}
 	}
-	deathCheck();
+	//deathCheck();
 }
 
 void BallManager::render(sf::RenderWindow* window)

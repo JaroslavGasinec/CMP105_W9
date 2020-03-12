@@ -4,6 +4,8 @@
 #include "Framework/Input.h"
 #include <string>
 #include <iostream>
+#include <time.h>
+#include "BallManager.h"
 
 
 class Level{
@@ -23,4 +25,6 @@ private:
 	// Default variables for level class.
 	sf::RenderWindow* window;
 	Input* input;
+	sf::Vector2u windowSize;
+	BallManager ballManager; //= BallManager(&windowSize);
 };

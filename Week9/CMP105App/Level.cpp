@@ -21,6 +21,9 @@ void Level::handleInput(float dt)
 	if (input->isKeyDown(sf::Keyboard::A)) {
 		ballManager->spawn();
 	}
+	if (input->isKeyDown(sf::Keyboard::S)) {
+		ballManager->spawn(1);
+	}
 }
 
 // Update game objects

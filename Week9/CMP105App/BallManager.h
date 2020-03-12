@@ -1,13 +1,15 @@
 #pragma once
 #include "Ball.h"
+#include "Framework/GameObject.h"
 #include <vector>
 #include <cmath>
 
 class BallManager
 {
-	std::vector<GameObject> balls;
+	std::vector<Ball> balls;
 	sf::Texture ball_T;
-	sf::Vector2u* windowSize = new sf::Vector2u(1000,500);
+	sf::Vector2u baseWindowSize = sf::Vector2u(1000, 500);
+	sf::Vector2u* windowSize = &baseWindowSize;
 	int ballSize = 100;
 
 public:

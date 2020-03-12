@@ -7,6 +7,6 @@ public:
 	Ball();
 	~Ball();
 
-	void update(float dt) override;
+	virtual void update(float dt) override;
 };
 

@@ -3,7 +3,7 @@
 BallManager::BallManager()
 {
 	srand(time(NULL));
-	ball_T.loadFromFile("gfx/Beach_Ball.png");
+	ball_T.loadFromFile("gfx/Goomba.png");
 	for (int i = 0; i < 20; i++) {
 		Ball newBall;
 		initialise(&newBall);
@@ -11,10 +11,16 @@ BallManager::BallManager()
 	}
 }
 
-BallManager::BallManager(sf::Vector2u* windowSize) : BallManager()
+BallManager::BallManager(sf::Vector2u* windowSize) 
 {
-	delete windowSize;
 	this->windowSize = windowSize;
+	srand(time(NULL));
+	ball_T.loadFromFile("gfx/Goomba.png");
+	for (int i = 0; i < 20; i++) {
+		Ball newBall;
+		initialise(&newBall);
+		balls.push_back(newBall);
+	}
 }
 
 BallManager::~BallManager()
@@ -23,7 +29,6 @@ BallManager::~BallManager()
 
 void BallManager::initialise(GameObject* object)
 {
-
 	object->setSize(sf::Vector2f(ballSize, ballSize));
 	object->setTexture(&ball_T);
 	object->setPosition(rand() % (windowSize->x - ballSize), rand() % (windowSize->y - ballSize));
@@ -72,7 +77,8 @@ void BallManager::update(float dt)
 {
 	for (int i = 0; i < balls.size(); i++) {
 		if (balls[i].isAlive()) {
-			balls[i].update(dt);
+			GameObject* current = &balls[i];
+			current->update(dt);
 		}
 	}
 	//deathCheck();

@@ -7,6 +7,8 @@
 #include <time.h>
 #include "BallManager.h"
 #include "RainManager.h"
+#include "BulletManager.h"
+#include "Player.h"
 
 
 class Level{
@@ -29,4 +31,6 @@ private:
 	sf::Vector2u windowSize;
 	BallManager* ballManager;
 	RainManager* rainManager;
+	BulletManager* bulletManager;
+	GameObject* player;
 };

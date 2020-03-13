@@ -3,6 +3,7 @@
 
 RainManager::RainManager(sf::Vector2u* windowSize)
 {
+	this->windowSize = windowSize;
 	goomba_T.loadFromFile("gfx/Goomba.png");
 	for (int i = 0; i < 40; i++) {
 		Goomba newGoomba;
